@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Interfaces\WeaponInterface;
+//use Interfaces\WeaponInterface;
 
 /**
  * Character 클래스
@@ -13,7 +13,7 @@ Class Character
 {
     private $weapon;
 
-    public function setWeapon(WeaponInterface $weapon)
+    public function setWeapon($weapon)
     {
         $this->weapon = $weapon;
     }

@@ -19,9 +19,9 @@ Class AxeBehavior implements WeaponInterface
         $crit = mt_rand(0, 100);
         //echo $crit;
         if ($crit >= 90) {
-            echo "도끼로 더 강하게 공격합니다!";
+            echo "도끼로 더 강하게 공격합니다!\n";
         } else {
-            echo "도끼로 공격합니다!";
+            echo "도끼로 공격합니다!\n";
         }
     }
 }
