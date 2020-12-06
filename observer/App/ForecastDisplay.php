@@ -4,15 +4,16 @@ namespace App;
 
 require_once './Interfaces/Observer.php';
 require_once './Interfaces/DisplayElement.php';
-require_once './App/WeatherData.php';
 
 use Interfaces\Observer;
 use Interfaces\DisplayElement;
-//use App\WeatherData;
 
 /**
- * WeatherData 클래스
- * 하위 클래스들이 사용 할 수 있는 fight 메소드를 생성
+ * ForecastDisplay 클래스
+ * 최신의 기압을 저장 하였다가 새로운 기압 정보가 들어오면
+ * 직전의 기압 정보와 새로운 기압 정보를 이용해서
+ * 기압 정보를 표시해줌
+ * 2020.12.05 Bnine
  */
 
 Class ForecastDisplay implements Observer, DisplayElement

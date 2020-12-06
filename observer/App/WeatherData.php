@@ -5,11 +5,13 @@ namespace App;
 require_once './Interfaces/Subject.php';
 
 use Interfaces\Subject;
-//use Interfaces\Observer;
 
 /**
  * WeatherData 클래스
- * 하위 클래스들이 사용 할 수 있는 fight 메소드를 생성
+ * 옵저버 추가와 삭제를 하며
+ * setMeasurements 메소드를 통해 값이 들어오면
+ * notifyObservers 메소드를 통해 등록된 옵저버 전원에게 통보(update 메소드 호출)
+ * 2020.12.05 Bnine
  */
 
 Class WeatherData implements Subject
@@ -21,6 +23,7 @@ Class WeatherData implements Subject
 
     public function registerObserver($observer) 
     {
+        echo "옵저버를 추가합니다\n";
         $this->observers[] = $observer;
     }
 

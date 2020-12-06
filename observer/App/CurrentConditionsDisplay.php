@@ -4,15 +4,14 @@ namespace App;
 
 require_once './Interfaces/Observer.php';
 require_once './Interfaces/DisplayElement.php';
-require_once './App/WeatherData.php';
 
 use Interfaces\Observer;
 use Interfaces\DisplayElement;
-//use App\WeatherData;
 
 /**
- * WeatherData 클래스
- * 하위 클래스들이 사용 할 수 있는 fight 메소드를 생성
+ * CurrentConditionsDisplay 클래스
+ * 온도와 습도를 표시하는 옵저버
+ * 2020.12.05 Bnine
  */
 
 Class CurrentConditionsDisplay implements Observer, DisplayElement
