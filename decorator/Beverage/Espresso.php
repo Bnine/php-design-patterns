@@ -12,9 +12,25 @@ class Espresso extends Beverage
     {
         $this->description = "에스프레소";
     }
+    
+    public function setSize($size)
+    {
+        $this->size = $size;
+    }
+
+    public function getSize() 
+    {
+        return $this->size;
+    }
 
     public function cost()
     {
-        return 1.99;
+        if ($this->size === 'S') {
+            return 1.99;
+        } elseif ($this->size === 'M') {
+            return 2.99;
+        } elseif ($this->size === 'L') {
+            return 3.99;
+        }
     }
 }

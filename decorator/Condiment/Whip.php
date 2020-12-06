@@ -22,8 +22,19 @@ class Whip implements CondimentDecorator
         return $this->beverage->getDescription().", 휘핑크림 추가";
     }
 
+    public function getSize()
+    {
+        return $this->beverage->getSize();
+    }
+
     public function cost()
     {
-        return $this->beverage->cost() + 2.49;
+        if ($this->getSize() === 'S') {
+            return $this->beverage->cost() + 2.49;
+        } elseif ($this->getSize() === 'M') {
+            return $this->beverage->cost() + 2.59;
+        } elseif ($this->getSize() === 'L') {
+            return $this->beverage->cost() + 2.69;
+        }
     }
 }

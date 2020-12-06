@@ -21,9 +21,20 @@ class Mocha implements CondimentDecorator
     {
         return $this->beverage->getDescription().", 모카 추가";
     }
-
+    
+    public function getSize()
+    {
+        return $this->beverage->getSize();
+    }
+    
     public function cost()
     {
-        return $this->beverage->cost() + 0.99;
+        if ($this->getSize() === 'S') {
+            return $this->beverage->cost() + 0.99;
+        } elseif ($this->getSize() === 'M') {
+            return $this->beverage->cost() + 1.09;
+        } elseif ($this->getSize() === 'L') {
+            return $this->beverage->cost() + 1.19;
+        }
     }
 }

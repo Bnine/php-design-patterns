@@ -22,8 +22,19 @@ class Sugar implements CondimentDecorator
         return $this->beverage->getDescription().", 설탕 추가";
     }
 
+    public function getSize()
+    {
+        return $this->beverage->getSize();
+    }
+
     public function cost()
     {
-        return $this->beverage->cost() + 0.25;
+        if ($this->getSize() === 'S') {
+            return $this->beverage->cost() + 0.25;
+        } elseif ($this->getSize() === 'M') {
+            return $this->beverage->cost() + 0.35;
+        } elseif ($this->getSize() === 'L') {
+            return $this->beverage->cost() + 0.45;
+        }
     }
 }
